@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Libre+Baskerville&display=swap");
+
+
+/* CSS reset or universal reset rule. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* The width and height of an element include padding and borders. */
+    font-family: "Lato", sans-serif;
+}
+
+/* set a default text color for all content inside the <html> element. */
+html {
+    color: rgb(19, 18, 18);
+}
+
+body {
+    background: rgb(233, 228, 228);
+}
+
+.accordion {
+    width: 50%;
+   /* margin: 200px auto 0 auto;  <--top right bottom left, centers the element */
+   margin: 200px auto; /*top/bottom left/right*/
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.item {
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 30px;
+    align-items: center;
+    padding: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+h2 {
+    font-size: 24px;
+    text-transform: capitalize;
+}
+
+.number {
+    font-size: 32px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    color: #186;
+
+}
+
+.hidden-box {
+    grid-column: 2/3;
+    display: none;
+}
+
+.hidden-box p {
+    line-height: 1.6;
+    margin-bottom: 24px;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    word-spacing: 3px;
+}
+
+.hidden-box ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.hidden-box ul li {
+    margin-left: 16px;
+    line-height: 1.5;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    word-spacing: 3px;
+}
+
+
+.active {
+    position: relative;
+}
+
+.active::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    border-top: 3px solid #1864ab;
+    animation: borderline 1s linear forwards;
+}
+
+@keyframes borderline {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.active .hidden-box {
+    display: block;
+}
+
+
+
+/*personality
+https://personalityrich.com/leader-webinar-ga/?gad_source=2&gclid=Cj0KCQiAvP-6BhDyARIsAJ3uv7YHg8jUfmkUvqs2PmtxGYDn2hW_3XzltkIQUmNzbe7yTrBwFrHRGNoaAmkEEALw_wcB
+*/
+
+
+
+ /* justify-content, align-items, and align-self can work with flex-wrap: wrap/nowrap/wrap-reverse.
+align-content only works with flex-wrap: wrap   */
+
+/* .hidden-box ul li {}
+Meaning: Targets all <li> elements that are descendants (direct or indirect) of a <ul>, which is itself a descendant (direct or indirect) of an element with the class .hidden-box.
+Flexible: It applies to <li> elements whether they are direct children or deeply nested within other elements. */
+
+
+/* .hidden-box > ul > li {}
+Meaning: Targets only <li> elements that are direct children of a <ul>, and that <ul> must be a direct child of the .hidden-box element.
+Strict: It does not apply to nested or indirectly related elements. */
+
+
+/* .hidden-box, ul, li { } 
+Meaning: targets all three different elements */
+
+
+
+
+
+
+
+
+
